@@ -7,8 +7,8 @@ LLM-Forest is a **task-agnostic framework** that ensembles the outputs of multip
 
 ## General Framework
 
-LLM-Forest constructs diverse prompts for a given task (e.g., Question Answering, Text Generation, Classification), obtains multiple outputs from LLMs, and aggregates them through ensemble strategies (e.g., confidence-weighted voting).  
-This design enhances **robustness**, **accuracy**, and **bias reduction** compared to using a single LLM.
+LLM-Forest constructs diverse prompts for a given task (e.g., Question Answering, Text Generation, Classification), obtains multiple outputs from LLMs, and aggregates them through self-evaluated confidence-weighted voting.  
+
 <p align="center">
   <img src="figures/general_framework.png" width="600">
 </p>
