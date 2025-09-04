@@ -1,6 +1,6 @@
 # 🌲 LLM-Forest
 
-This repository contains the implementation of **LLM-Forest**, our ACL 2025 Findings paper.  
+This repository contains the implementation of [**LLM-Forest**](https://arxiv.org/abs/2410.21520), our ACL 2025 Findings paper.  
 LLM-Forest is a **task-agnostic framework** that ensembles the outputs of multiple large language models (LLMs) based on diverse prompt generations, inspired by the idea of random forests.  
 
 ---
