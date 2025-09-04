@@ -26,50 +26,18 @@ The process includes graph construction, prompt generation, LLM-based imputation
 
 ## Reproducing the Results
 
-To reproduce the results in our paper, please execute the codes in the following sequence:
-
-#### 1. `graph_retrieve.py`
-Finds the neighbors for each patient/user and combines their descriptions into a context (feature–value pairs) for imputation.  
-This step creates **3 JSON files** (for 3 rounds).
-
-**Example (Diabetes dataset):**
-```bash
-python graph_retrieve.py \
-  --data_path diabetes_train4.csv \
-  --neighbors_txt gliomas_neighbors_list.txt \
-  --json_output diabetes_descriptions4_hard.json \
-  --imputation_output imputed_data.csv \
-  --rounds 3
-```
----
-
-#### 2. `llm_trees_inference.py `
-Runs **multiple LLM-based imputations** using the JSON files from Step&nbsp;1.  
-Each run produces a JSON output for one LLM tree, containing imputation results for all patients.  
+To reproduce the results in our paper, here is an example:
 
 **Example (Diabetes dataset with GPT-4):**
 ```bash
-python llm_trees_inference.py   --dataset diabetes   --model gpt4   --index 0
+python main.py \
+  --data_path ./data/diabetes_train4.csv \
+  --dataset diabetes \
+  --model_name gpt \
+  --num_round 3 \
+  --group_size 2 \
+  --num_neighbors 5
 ```
-
-#### 3. `results_aggr.py `
-After inference, automatically performs:  
-
-- Post-processing of JSON to CSV  
-- Confidence-weighted voting across multiple rounds  
-- Accuracy computation and report generation
-  
-```bash
-python results_aggr.py --dataset diabetes
-```
-
----
-
-## Output
-After running the full pipeline, you will obtain:
-- **`imputed_{dataset}.csv`** → The completed table with missing values imputed.  
-- Ensemble results.  
-
 ---
 
 ## Citation
