@@ -26,9 +26,8 @@ The process includes graph construction, prompt generation, LLM-based imputation
 
 ## Reproducing the Results
 
-To reproduce the results in our paper, here is an example:
+To reproduce the results in our paper, here is an example for Diabetes dataset with GPT-4:
 
-**Example (Diabetes dataset with GPT-4):**
 ```bash
 python main.py \
   --data_path ./data/diabetes_train4.csv \
