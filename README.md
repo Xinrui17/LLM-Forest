@@ -26,6 +26,13 @@ The process includes graph construction, prompt generation, LLM-based imputation
 
 ## Reproducing the Results
 
+There are **no strict environment requirements** for this project and it can run under most standard Python setups.  
+You can simply install the minimal dependencies with:
+
+```bash
+pip install -r requirements.txt
+```
+
 To reproduce the results in our paper, here is an example for Diabetes dataset with GPT-4:
 
 ```bash
